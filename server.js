@@ -10,9 +10,9 @@ app.get("/pokemon", (req, res) => {
   res.send(Pokemon);
 });
 
-// Set up your index view
+// Set up your index view (Used Context Variable For Learning Purposes)
 
-app.get("/pokemon/:index", (req, res) => {
+app.get("/pokemon/index", (req, res) => {
   const context = {
     pokemon: Pokemon
   }
@@ -21,8 +21,11 @@ app.get("/pokemon/:index", (req, res) => {
 
 //Set up your show route
 
-
-
+app.get("/pokemon/:id", (req, res) => {
+  res.render('show.ejs', {
+    pokemon: Pokemon[req.params.id]
+  });
+});
 
 // Server listening
 
