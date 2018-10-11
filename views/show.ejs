@@ -9,9 +9,14 @@
 <body>
     
     <h1>Pokemon Details:</h1>
+
     <% for(let key in pokemon) { %>
-        <%= pokemon[key] %>
+        <li> <%= `${key}: ${pokemon[key]} `%> </li>
     <% } %>
+
+    <button> 
+        <a href="/pokemon/<%= id %>/edit">Edit</a>
+    </button>
 
 </body>
 </html>
